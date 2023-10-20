@@ -1,0 +1,13 @@
+package com.test.jdbc;
+
+public class Ex04_PreparedStatement {
+	
+	public static void main(String[] args) {
+		
+		
+		//Ex04_PreparedStatement.java
+		
+		
+	}
+
+}

@@ -1,0 +1,18 @@
+package com.test.jdbc;
+
+public class Ex04_PreparedStatement {
+	
+	public static void main(String[] args) {
+		
+		
+		//Ex04_PreparedStatement.java
+		
+		//Statement vs PreparedStatement
+		//- Statement > 정적 SQL (매개변수 X)
+		//- PreparedStatemend > 동적 SQL(매개변수 o)
+		
+		String sql="";
+		
+	}
+
+}
