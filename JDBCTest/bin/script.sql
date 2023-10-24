@@ -16,4 +16,74 @@ select * from tbladdress;
 
 drop table tblAddress;
 
-commit;
+drop sequence seqAddress;
+
+commit; 
+
+
+--Ex05.java
+
+-- m1. 인자값(X) 반환값(X) 
+create or replace procedure procM1
+is 
+begin
+    update tblAddress set age = age +1;
+end procM1;
+
+select * from tbladdress;
+
+
+--m2 인자값(o) 반환값(x)
+create or replace procedure procM2 (
+    pname tblAddress.name%type,
+    page tblAddress.age%type,
+    pgender tblAddress.gender%type,
+    paddress tblAddress.address%type
+)
+is
+begin
+    insert into tblAddress
+        values (seqAddress.nextVal, pname, page, pgender, paddress, default);
+end procM2;
+
+-- m3. 인자값(X), 반환값(O)
+create or replace procedure procM3 (
+    pcnt out number
+)
+is
+begin
+    select count(*)into pcnt from tblAddress;
+end procM3;
+
+
+
+-- m4. 인자값(X), 반환값(O)
+create or replace procedure procM4 (
+    pname out varchar2,
+    page out number,
+    paddress out varchar2
+)
+is
+begin
+    select name, age, address into pname,page,paddress from tblAddress
+        where rownum = 1;
+end procM4;
+
+
+
+--m5
+create or replace procedure procM5 (
+    pcursor out sys_refcursor
+)
+is
+begin
+    open pcursor
+    for
+        select * from tblAddress;
+end procM5;
+
+
+
+
+
+select * from tblAddress;
