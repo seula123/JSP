@@ -1,0 +1,30 @@
+
+
+
+-"com.test.ajax"패키지 생성
+-"com.test.ajax.controller"
+-"com.test.ajax.repository"
+-"com.test.ajax.model"
+-WEB-INF >"views"폴더 생성
+
+-WEB-INF > lib > ojdbc6.jar
+			   > jstl-1.2jar
+			   > lombok.jar  //예정
+			   > json 		//예정
+
+Ajax, Asynchronous JavaScript and XML
+- 자바스크립트 기술
+- 비동기 방식으로 자바스크립트를 사용해서 서버와 데이터를 통신하는 기술 (XML 형식으로 주고 받음)
+
+- com.test.controller > "Ex01.java"
+					  > "Ex01.Data.java"
+					  
+- com.test.controller.repository > "AjaxDAO.java"
+
+
+- views > "ex01.jsp"
+		> "ex01data.jsp"
+
+
+
+
