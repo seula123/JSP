@@ -1,29 +1,160 @@
+새 프로젝트
+- Dynamic Web Project > "AjaxTest" > context root: "ajax" > Generate web.xml 체크
 
+- "com.test.ajax" 패키지 생성
+- "com.test.ajax.controller" 패키지 생성
+- "com.test.ajax.respository" 패키지 생성
+- "com.test.ajax.model" 패키지 생성 
 
+- WEB-INF >"views"폴더 생성
 
--"com.test.ajax"패키지 생성
--"com.test.ajax.controller"
--"com.test.ajax.repository"
--"com.test.ajax.model"
--WEB-INF >"views"폴더 생성
-
--WEB-INF > lib > ojdbc6.jar
-			   > jstl-1.2jar
-			   > lombok.jar  //예정
-			   > json 		//예정
+- WEB-INF > lib > ojdbc6.jar
+            > jstl-1.2jar
+            > lombok.jar  //예정
+            > json       //예정
 
 Ajax, Asynchronous JavaScript and XML
-- 자바스크립트 기술
-- 비동기 방식으로 자바스크립트를 사용해서 서버와 데이터를 통신하는 기술 (XML 형식으로 주고 받음)
+- 자바 스크립트 기술
+- 비동기 방식으로 자바스크립트를 사용해서 서버와 데이터를 통신하는 기술(XML 형식으로 주고 받음)
 
-- com.test.controller > "Ex01.java"
-					  > "Ex01.Data.java"
-					  
-- com.test.controller.repository > "AjaxDAO.java"
+- com.test.ajax.controller         > "Ex01.java"
+                           > "Ex01Data.java"
+- com.test.ajax.respository         > "AjaxDAO.java"
+- views                        > "ex01.jsp"
+-                           > "ex01data.jsp"
+
+- com.test.ajax.controller         > "Ex02.java"
+-                           > "Ex02Data.java"
+- views                        > "ex02.jsp"
+-                           > "ex02data.jsp"
+
+- com.test.ajax.controller         > "Ex03.java"
+                           > "Ex03Data.java"
+- views                        > "ex03.jsp"
+
+- com.test.ajax.controller         > "Ex04.java"
+                           > "Ex04Data.java"
+- views                        > "ex04.jsp"
+
+- com.test.ajax.controller         > "Ex05.java"
+                           > "Ex05Data.java"
+- views                        > "ex05.jsp"
+
+- com.test.ajax.controller         > "Ex06.java"
+                           > "Ex06Data.java"
+- views                        > "ex06.jsp"
+
+- com.test.ajax.controller         > "Ex07.java"
+                           > "Ex07Data.java"
+- views                        > "ex07.jsp"
+
+- AjaxTest > "script.sql"
+- com.test.ajax.controller         > "Ex08.java"
+- com.test.ajax.service            > "List.java"
+								   > "Add.java"
+								   > "Edit.java"
+
+- com.test.ajax.controller.model   > "AddressDTO.java"
+- views                        > "ex08.jsp"
 
 
-- views > "ex01.jsp"
-		> "ex01data.jsp"
+
+-jackson library > lib 복사
+
+
+
+새 프로젝트
+- New > Dynamic Web Project > "ToyProject" > Context root: "toy" > web.xml 체크O
+
+주제
+1. 게시판
+2. 회원 관리(인증)
+3. 기타 등..
+4. 프로젝트 경험
+
+
+요구분석
+- 익숙
+
+
+전체 구성(페이지 관계도)
+- draw.io
+
+
+화면 설계 & 스토리 보드
+- 생략
+
+
+데이터베이스
+- ERD
+- ToyProject > "ddl.sql"
+			 > "dml.sql"
+
+
+구현
+- 패키지
+	1. com.test.toy: 메인 패키지
+	2. com.test.toy.user: 회원
+	3. com.test.toy.user.repository: DB
+	4. com.test.toy.user.model: DB
+- 파일
+	1. com.test.toy
+		- Index.java: 시작 페이지
+		- Template.java: 템플릿 페이지	
+		- DBUtil.java
+	2. com.test.toy.user
+		- Register.java: 회원 가입
+		- Unregister.java: 회원 탈퇴
+		- Login.java: 로그인
+		- Logout.java: 로그아웃
+		- Info.java: 회원 정보
+	3. com.test.toy.user.repository
+		- UserDAO.java
+	4. com.test.toy.user.model
+		- UserDTO.java
+- 뷰
+	1. views
+		a. 루트
+			- index.jsp: 시작 페이지
+			- template.jsp: 템플릿 페이지
+		b. user
+			- register.jsp: 회원 가입
+			- unregister.jsp: 회원 탈퇴
+			- login.jsp: 로그인
+			- info.jsp: 회원 정보
+		c. inc	
+			- asset.jsp: CSS, JS
+			- header.jsp
+- 라이브러리
+	- lib
+		- ojdbc6.jar
+		- jstl-1.2.jar
+		- cos.jar
+		- json-simple-1.1.1.jar
+		- lombok.jar
+
+- 클라이언트 라이브러리
+	- webapp > asset > css > toy.css
+
+- 프로필 사진 경로
+	- webapp > asset > pic
+
+
+기본 페이지(=레이아웃)
+- Template.java
+- template.jsp
+
+
+
+Favicon
+- Favorite icon
+- icon 파일 필요(*.ico) > "favicon.ico"
+- webapp > asset > favicon.ico
+
+
+
+
+
 
 
 

@@ -34,3 +34,21 @@ commit;
 select * from tblMemo;
 
 insert into tblMemo (seq, name, pw, memo, regdate) values (seqMemo.nextval, 'aaa', 'aaa', 'aaa', default);
+
+
+
+
+create table tblCat(
+    seq number primary key,
+    catid varchar2(50) not null,
+    x number not null,
+    y number not null
+);
+
+insert into tblCat values (1, 'cat1',0,0);
+insert into tblCat values (2, 'cat2',0,0);
+insert into tblCat values (3, 'cat3',0,0);
+insert into tblCat values (4, 'cat4',0,0);
+insert into tblCat values (5, 'cat5',0,0);
+
+commit;

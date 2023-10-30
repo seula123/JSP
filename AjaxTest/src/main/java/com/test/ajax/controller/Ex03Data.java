@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.test.ajax.repository.AjaxDAO;
+import com.test.ajax.respository.AjaxDAO;
 
 @WebServlet("/ex03data.do")
 public class Ex03Data extends HttpServlet {
