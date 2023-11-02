@@ -107,7 +107,7 @@ public class UserDAO {
 				
 				UserDTO dto = new UserDTO();
 				
-				dto.setId(rs.getString("name"));
+				dto.setName(rs.getString("name"));
 				dto.setEmail(rs.getString("email"));
 				dto.setPic(rs.getString("pic"));
 				dto.setIntro(rs.getString("intro"));

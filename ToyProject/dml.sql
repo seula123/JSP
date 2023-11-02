@@ -28,8 +28,21 @@ select * from vwBoard;
 
 update tblBoard set regdate = regdate - 1 where seq <= 6;
 
+select * from tblUser;
+update tblUser set lv = 2 where id = 'admin';
+
 commit;
 
 
+select * from vwBoard;  --목록보기
 
+select * from vwBoard where subject like '%게시판'; --검색
+
+
+--페이징 > rownum 활용
+select * from (select a.*, rownum as rnum from vwBoard a) where rnum between 1 and 10;
+select * from (select a.*, rownum as rnum from vwBoard a) where rnum between 11 and 20;
+select * from (select a.*, rownum as rnum from vwBoard a) where rnum between 21 and 30;
+
+select count(*) from tblBoard;
 
