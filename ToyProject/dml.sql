@@ -1,10 +1,10 @@
 
 -- ToyProject > dml.sql
 
--- È¸¿ø
+-- íšŒì›
 insert into tblUser (id, pw, name, email, lv, pic, intro, ing)
-    values ('hong', '1111', 'È«±æµ¿', 'hong@gmail.com'
-        , '1', default,  'ÀÚ¹Ù¸¦ °øºÎÇÏ´Â ÇĞ»ıÀÔ´Ï´Ù.', default);
+    values ('hong', '1111', 'í™ê¸¸ë™', 'hong@gmail.com'
+        , '1', default,  'ìë°”ë¥¼ ê³µë¶€í•˜ëŠ” í•™ìƒì…ë‹ˆë‹¤.', default);
         
 select * from tblUser;
 
@@ -15,7 +15,7 @@ commit;
 
 
 insert into tblBoard (seq, subject, content, regdate, readcount, id)
-    values (seqBoard.nextVal, '°Ô½ÃÆÇÀÔ´Ï´Ù.', '³»¿ëÀÔ´Ï´Ù.', default, default, 'hong');
+    values (seqBoard.nextVal, 'ê²Œì‹œíŒì…ë‹ˆë‹¤.', 'ë‚´ìš©ì…ë‹ˆë‹¤.', default, default, 'hong');
 
 select * from tblBoard;
 
@@ -28,21 +28,13 @@ select * from vwBoard;
 
 update tblBoard set regdate = regdate - 1 where seq <= 6;
 
+select * from tblBoard where seq = 1;
+
 select * from tblUser;
+
 update tblUser set lv = 2 where id = 'admin';
 
 commit;
 
 
-select * from vwBoard;  --¸ñ·Ïº¸±â
-
-select * from vwBoard where subject like '%°Ô½ÃÆÇ'; --°Ë»ö
-
-
---ÆäÀÌÂ¡ > rownum È°¿ë
-select * from (select a.*, rownum as rnum from vwBoard a) where rnum between 1 and 10;
-select * from (select a.*, rownum as rnum from vwBoard a) where rnum between 11 and 20;
-select * from (select a.*, rownum as rnum from vwBoard a) where rnum between 21 and 30;
-
-select count(*) from tblBoard;
 

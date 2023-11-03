@@ -9,7 +9,7 @@
 		</c:if>
 		
 		<c:if test="${not empty id}">
-		<span class="material-symbols-outlined">toys</span>..
+		<span class="material-symbols-outlined">toys</span>...
 		<span>Toy</span>
 		</c:if>
 		

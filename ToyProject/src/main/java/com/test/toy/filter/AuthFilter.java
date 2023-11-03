@@ -42,9 +42,8 @@ public class AuthFilter implements Filter {
  		if (session.getAttribute("id") == null) {
  			if (httpReq.getRequestURI().endsWith("add.do")
  				|| httpReq.getRequestURI().endsWith("edit.do")
- 				|| httpReq.getRequestURI().endsWith("del.do") 
- 				|| httpReq.getRequestURI().endsWith("info.do")) 
- 																{
+ 				|| httpReq.getRequestURI().endsWith("del.do")
+ 				|| httpReq.getRequestURI().endsWith("info.do")) {
  				
  				//httpResp.sendRedirect("/toy/index.do");
  				

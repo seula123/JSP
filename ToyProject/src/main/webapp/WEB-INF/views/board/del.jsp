@@ -7,28 +7,29 @@
 <meta charset="UTF-8">
 <%@ include file="/WEB-INF/views/inc/asset.jsp" %>
 <style>
-   
+	
 </style>
 </head>
 <body>
-   <!-- template.jsp -->
-   <%@ include file="/WEB-INF/views/inc/header.jsp" %>
-   <main id="main">
-      <h1>게시판 <small>삭제</small></h1>
-      <form method="POST" action="/toy/board/del.do">
-          <button type="button" class="back" onclick="location.href='/toy/board/view.do?seq=${seq}';">돌아가기</button>
-            <button type="submit" class="del primary">삭제하기</button>
-            <div>
-            <input type="hidden" name="seq" value="${seq}">
-            </div>
-      </form>
-   </main>
-   
-   <script>
-      
-   </script>
+	<!-- del.jsp -->
+	<%@ include file="/WEB-INF/views/inc/header.jsp" %>
+	<main id="main">
+		<h1>게시판 <small>삭제하기</small></h1>
+		<form method="POST" action="/toy/board/del.do">
+		<div>
+			<button type="button" class="back" onclick="location.href='/toy/board/view.do?seq=${seq}';">돌아가기</button>
+			<button type="submit" class="del primary">삭제하기</button>
+		</div>
+		<input type="hidden" name="seq" value="${seq}">
+		</form>
+	</main>
+	
+	<script>
+		
+	</script>
 </body>
 </html>
+
 
 
 

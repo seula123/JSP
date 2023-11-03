@@ -6,7 +6,7 @@ grant connect, resource, dba to toy;
 
 -- ToyProject > ddl.sql
 
--- È¸¿ø
+-- ?šŒ?›
 create table tblUser (
     id varchar2(50) not null,
     pw varchar2(50) not null,
@@ -20,7 +20,7 @@ create table tblUser (
 );
 
 
--- °Ô½ÃÆÇ
+-- ê²Œì‹œ?Œ
 create table tblBoard (
     seq number not null,
     subject varchar2(300) not null,
@@ -37,30 +37,42 @@ create sequence seqBoard;
 
 create or replace view vwBoard
 as
-select
-   seq, subject, id, readcount, content,
-   case
-      when to_char(sysdate, 'yyyy-mm-dd') = to_char(regdate, 'yyyy-mm-dd')
-         then to_char(regdate, 'hh24:mi:ss') --±Û¾²°í ³­ µÚ ÇÏ·ç°¡ Áö³µ´Ù¸é ½Ã°£ Ãâ·Â
-      else to_char(regdate, 'yyyy-mm-dd')
-   end as regdate,
-   (select name from tblUser where id = tblBoard.id) as name,
-   case
-      when (sysdate - regdate) < 30 / 24 / 60 then 1
-      else 0
-   end as isnew
+select 
+    seq, subject, id, readcount, 
+    case
+        when to_char(sysdate, 'yyyy-mm-dd') = to_char(regdate, 'yyyy-mm-dd') 
+            then to_char(regdate, 'hh24:mi:ss')
+        else
+            to_char(regdate, 'yyyy-mm-dd')
+    end as regdate,
+    (select name from tblUser where id = tblBoard.id) as name,
+    case
+        when (sysdate - regdate) < 1 then 1
+        else 0
+    end as isnew
 from tblBoard order by seq desc;
 
 
 
 
+-- ?Œ“ê¸?
+create table tblComment (
+    seq number not null,
+    content varchar2(1000) not null,
+    regdate date default sysdate not null,
+    id varchar2(50) not null,               --?šŒ?›
+    bseq number not null,                   --ë¶?ëª¨ê?ë²ˆí˜¸
+    constraint tblcomment_pk primary key(seq),
+    constraint tblcomment_fk_id foreign key(id) references tblUser(id),
+    constraint tblcomment_fk_bseq foreign key(bseq) references tblBoard(seq)
+);
+
+create sequence seqComment;
 
 
 
 
-
-
-
+select * from (select a.*, rownum as rnum from vwBoard a where name like '%%') where rnum between 1 and 10;
 
 
 

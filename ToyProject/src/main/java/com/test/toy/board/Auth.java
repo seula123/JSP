@@ -1,5 +1,6 @@
 package com.test.toy.board;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,17 +20,19 @@ public class Auth {
 		BoardDAO dao = new BoardDAO();
 		BoardDTO dto = dao.get(seq);
 		
-		if(!session.getAttribute("id").toString().equals(dto.getId()) 
-		&& !session.getAttribute("lv").toString().equals("2")){
-					try {
-						PrintWriter writer = resp.getWriter();
-						writer.print("<script>alert('failed');history.back();</script>");
-						writer.close();
-								
-					} catch (Exception e) {
-						System.out.println("Auth.check");
-						e.printStackTrace();
-					}
+		if (!session.getAttribute("id").toString().equals(dto.getId())
+				&& !session.getAttribute("lv").toString().equals("2")) {
+			
+			try {
+				
+				PrintWriter writer = resp.getWriter();
+				writer.print("<script>alert('failed');history.back();</script>");
+				writer.close();
+				
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			
 			
 			return true;
 		}
@@ -37,4 +40,26 @@ public class Auth {
 		return false;
 	}
 
+	
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

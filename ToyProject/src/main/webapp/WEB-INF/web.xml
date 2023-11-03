@@ -34,9 +34,7 @@
 	
 	
 	
-	
-	
-		<filter>
+	<filter>
 		<filter-name>auth</filter-name>
 		<filter-class>com.test.toy.filter.AuthFilter</filter-class>
 	</filter>

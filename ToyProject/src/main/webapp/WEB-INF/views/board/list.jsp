@@ -27,6 +27,19 @@
 		margin-bottom: 15px;
 	}
 	
+	#pagebar {
+		text-align: center;
+		margin-bottom: 15px;
+	}
+	
+	.comment-count {
+		font-size: 12px;
+	}
+	
+	.comment-count::before {
+		content: '..';
+	}
+	
 </style>
 </head>
 <body>
@@ -34,35 +47,40 @@
 	<%@ include file="/WEB-INF/views/inc/header.jsp" %>
 	<main id="main">
 		<h1 class="sub">
-		게시판
-		<small>
-		<c:if test="${map.search == 'n'}">
-		목록
-		</c:if>
-		<c:if test="${map.search == 'y'}">
-		검색결과
-		</c:if>
-		</small>
+			게시판 
+			<small>
+				<c:if test="${map.search == 'n'}">
+				목록보기
+				</c:if>
+				<c:if test="${map.search == 'y'}">
+				검색결과
+				</c:if>
+			</small>
 		</h1>
 		
-<%-- 		<div style="text-align: right">
+		<%-- 
+		<div style="text-align:right;">		
 			<input type="number" id="page" class="short" min="1" max="${totalPage}" value="${nowPage}">
-			<input type="button" value="이동하기" onclick="location.href='/toy/board/list.do?page=' +$('#page').val();">
-		</div> --%>
+			<input type="button" value="이동하기" onclick="location.href='/toy/board/list.do?page=' + $('#page').val();">
+		</div> 
+		--%>
 		
- 		<div style="text-align:right;">
-			<select id="selPage" onchange="location.href='/toy/board/list.do?page='+$(this).val();">
+		<%-- 
+		<div style="text-align:right;">
+			<select id="selPage" onchange="location.href='/toy/board/list.do?page=' + $(this).val();">
 				<c:forEach var="i" begin="1" end="${totalPage}">
 				<option value="${i}">${i}</option>
 				</c:forEach>
 			</select>
 			페이지
 		</div> 
+		--%>
 		
-<%--<div>
-         <input type="range" min="1" max="${totalPage}" style="width: 100%;" value="${nowPage}" onchange="location.href='/toy/board/list.do?page=' + $(this).val();">
-      </div> --%>
-
+		<%-- 
+		<div>
+			<input type="range" min="1" max="${totalPage}" style="width: 100%;" value="${nowPage}" onchange="location.href='/toy/board/list.do?page=' + $(this).val();">
+		</div> 
+		--%>
 		
 		<table id="list">
 			<tr>
@@ -79,6 +97,10 @@
 					
 					<a href="/toy/board/view.do?seq=${dto.seq}&search=${map.search}&column=${map.column}&word=${map.word}">${dto.subject}</a>
 					
+					<c:if test="${dto.ccnt > 0}">
+					<span class="comment-count">${dto.ccnt}</span>
+					</c:if>
+					
 					<c:if test="${dto.isnew == 1}">
 					<span class='is-new'>new</span>
 					</c:if>
@@ -90,11 +112,8 @@
 			</c:forEach>
 		</table>
 		
-		
 		<!-- 페이지바 -->
-		<div id="pagebar">${pagebar}</div>		
-		
-		
+		<div id="pagebar">${pagebar}</div>
 		
 		<!-- 검색 -->
 		<form id="search-form" action="/toy/board/list.do" method="GET">
@@ -126,9 +145,7 @@
 		</c:if>
 		
 		$('#selPage').val(${nowPage});
-			
-		
-		
+	
 	</script>
 </body>
 </html>
