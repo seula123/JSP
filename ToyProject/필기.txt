@@ -149,11 +149,29 @@ Favicon
 
 
 
+------------------
+open api > map
+- google map
+- naver map
+- kakao map
 
 
+kakao map api
+	https://apis.map.kakao.com/web/guide/
+
+-카카오 개발자 센터
+https://developers.kakao.com/ >회원가입 or 로그인
 
 
-
+- "com.test.toy.map" > "Ex.java"
+					> MapDAO
+					> MapDTO
+					> AddMarker
+					> AddPlace.java
+					> ListPlace.java
+					> DelPlace.java
+					> PlaceDTO.JAVA
+- views > "map" > "ex01.jsp"
 
 
 
