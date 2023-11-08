@@ -3,7 +3,6 @@ package com.test.toy.map;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,11 +17,11 @@ public class AddMarker extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+		//AddMarker.java
 		
 		//1.
 		String lat = req.getParameter("lat");
 		String lng = req.getParameter("lng");
-		
 		
 		//2.
 		MapDAO dao = new MapDAO();
@@ -35,7 +34,6 @@ public class AddMarker extends HttpServlet {
 		
 		
 		//3.
-		
 		resp.setContentType("application/json");
 		
 		JSONObject obj = new JSONObject();
@@ -43,7 +41,20 @@ public class AddMarker extends HttpServlet {
 		
 		PrintWriter writer = resp.getWriter();
 		writer.write(obj.toString());
-		writer.close();		
+		writer.close();	
+		
+		
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+

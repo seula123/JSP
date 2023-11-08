@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="List"/>
+		<item key="selection" value="이미지"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="이미지"/>
+			<item value="마커"/>
+			<item value="이미지 추가"/>
+			<item value="추가하기"/>
+			<item value="#"/>
+			<item value="카테고리"/>
+			<item value="장소"/>
 			<item value="list"/>
 			<item value="수정"/>
 			<item value="삭제"/>
@@ -16,11 +23,6 @@
 			<item value="change"/>
 			<item value="on"/>
 			<item value="11"/>
-			<item value="userdao"/>
-			<item value="user"/>
-			<item value="값이 "/>
-			<item value="load"/>
-			<item value="\\n"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>
